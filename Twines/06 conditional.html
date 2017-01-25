@@ -106,7 +106,8 @@ Your look around the tiny room and see:
 [[A door with a giant padlock-&gt;Door]]
 [[check out the oddly placed rug-&gt;Rug]]
 [[Check out the creepy looking teddy bear in the corner-&gt;Bear]]</tw-passagedata>
-<tw-passagedata pid="2" name="StoryInit" tags="" position="458,246">&lt;&lt;set $hasKey = false&gt;&gt;</tw-passagedata>
+<tw-passagedata pid="2" name="StoryInit" tags="" position="458,246">&lt;&lt;set $hasKey = false&gt;&gt;
+</tw-passagedata>
 <tw-passagedata pid="3" name="Door" tags="" position="333,226">Lock looks really sturdy. I dont think you are a lock smith... you need a key homie....
 
 [[Try to pick the lock-&gt;Pick Lock]]
@@ -121,7 +122,7 @@ Your look around the tiny room and see:
 [[Check out the pockets on the vest-&gt;VestPockets]]
 [[Fuck all dat! find another way-&gt;LookAround]] </tw-passagedata>
 <tw-passagedata pid="6" name="Pick Lock" tags="" position="333,376">&lt;&lt;if $hasKey&gt;&gt;
-	Ha, looks like you found your way in...
+	Ha, looks like you found your way out...
 	 
 	 you are a Boss!! [[WIN-&gt;Winner]]
 	
@@ -132,9 +133,9 @@ Your look around the tiny room and see:
 &lt;&lt;/if&gt;&gt;</tw-passagedata>
 <tw-passagedata pid="7" name="Winner" tags="" position="333,526">You friggin Rock!!</tw-passagedata>
 <tw-passagedata pid="8" name="PickUpKey" tags="" position="583,376">&lt;&lt;set $hasKey = true&gt;&gt;  
-You&#39;re a real trooper!. You found the key, granted no one will ever touch your hands again... 
+You&#39;re a real trooper!. You found the way out, granted no one will ever touch your hands again... 
 
-[[Use the key on the padlock-&gt;Pick Lock]]</tw-passagedata>
+[[Use it on the padlock-&gt;Pick Lock]]</tw-passagedata>
 <tw-passagedata pid="9" name="Try Door" tags="" position="583,526">Double-click this passage to edit it.</tw-passagedata>
 <tw-passagedata pid="10" name="PickUpBear" tags="" position="722,376">&lt;img src =&quot;https://s-media-cache-ak0.pinimg.com/564x/83/22/47/8322477d84ab22c8ec4d296182dfeb20.jpg&quot;&gt;
 
@@ -145,7 +146,7 @@ wait.... is there a window around?
 [[use the brick to smash the lock off the door-&gt;Pick Lock]] </tw-passagedata>
 <tw-passagedata pid="11" name="VestPockets" tags="" position="873,376">There&#39;s some bobby pin and a swiss army knife. I knew this bear has lived a hard life.... Maybe you could use this ont he door....hmmmmm
 
-[[go to lock and tr your skills-&gt;Pick Lock]] 
+[[go to lock and try your luck-&gt;PickUpKey]] 
 [[Leave the Maguiver pack in the pocket-&gt;LookAround]] 
 </tw-passagedata>
 <tw-passagedata pid="12" name="5StoriesUp" tags="" position="722,526">Great Idea genius... did you forget that you are 5 stories up??
