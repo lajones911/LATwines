@@ -175,6 +175,7 @@ body.green-background {
 }
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">/*! typed.js integration module for SugarCube */
 !function(){"use strict";function getInlineOptions(classNames){var match,options={},typedRe=/^typed(?:-(\w+))+\b$/,parseRe=/-(speed|delay)(\d+)\b/g;if("typed"!==classNames){classNames=classNames.toLowerCase().split(/\s+/);for(var i=0;i<classNames.length;i++)if(typedRe.test(classNames[i])){for(;null!==(match=parseRe.exec(classNames[i]));)switch(match[1]){case"speed":options.typeSpeed=+match[2];break;case"delay":options.startDelay=+match[2]}break}}return options}function typedCallbackFactory(el,callback){return function(){var $outer=jQuery(el),$inner=jQuery('<div class="typedjs-text-wrapper" style="display:block;position:absolute;left:0;top:0;"><span class="typed"></span></div>'),$source=$outer.children('[class|="typed"]'),options=jQuery.extend({typeSpeed:40,startDelay:400},getInlineOptions($source.attr("class")),{strings:[$source.html()]});"function"==typeof callback&&(options.callback=callback),$outer.append($inner),$inner.children().typed(options)}}postrender.typedSetupHandler=function(content){jQuery('[class|="typed"]',content).addClass("typed").css("visibility","hidden").wrap('<div class="typedjs-outer-wrapper" style="display:block;position:relative;"></div>')},postdisplay.typedAnimationHandler=function(){for(var $elements=jQuery("#passages .typedjs-outer-wrapper"),callback=null,i=$elements.length-1;i>=0;--i)callback=typedCallbackFactory($elements[i],callback);"function"==typeof callback&&callback()}}();
 /*! Typed.js | (c) 2014 Matt Boldt | MIT License */
@@ -331,6 +332,7 @@ body.green-background {
 
 
 
+
 </script><tw-passagedata pid="1" name="Start" tags="" position="422,276">/*&lt;h1 class=&quot;animated infinite bounce&quot;&gt;Example&lt;/h1&gt; */
 
 /* &lt;div class=&quot;animated infinite pulse&quot;&gt;Here&#x27;s a pulse&lt;/div&gt;*/
@@ -385,7 +387,7 @@ Hmm.. You have to solve a riddle to get the password....
 &lt;&lt;cyclinglink &quot;$dial1&quot; &quot;feel&quot; &quot;four&quot; &quot;foot&quot; &quot;seven&quot;&gt;&gt;
 &lt;&lt;cyclinglink &quot;$dial2&quot; &quot;bell&quot; &quot;your&quot; &quot;steps&quot; &quot;you&quot;&gt;&gt;
 
-&lt;&lt;audio &quot;JamesB&quot; stop&gt;&gt;
+&lt;&lt;audio &quot;James&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;mission&quot; play loop volume 0.2&gt;&gt;
 
 [[Enter-&gt;password]]
@@ -437,7 +439,7 @@ You&#x27;re not going to make it..RUN
 	&lt;&lt;goto &quot;boom&quot;&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;/if&gt;&gt; </tw-passagedata><tw-passagedata pid="8" name="System" tags="code-background" position="719,534">@@.typed-700ms;
+&lt;&lt;/if&gt;&gt; </tw-passagedata><tw-passagedata pid="8" name="System" tags="code-background" position="717,532">@@.typed-700ms;
 Enter override key...
 @@
 
@@ -448,7 +450,10 @@ Enter override key...
 Congratulations Agent.....
 You are free.
 for __NOW__....
-@@</tw-passagedata><tw-passagedata pid="11" name="Mission" tags="green-background" position="418,637">@@.typed-speed800ms; 
+@@</tw-passagedata><tw-passagedata pid="11" name="Mission" tags="green-background" position="418,636">&lt;&lt;audio &quot;James&quot; stop&gt;&gt;
+&lt;&lt;audio &quot;mission&quot; play loop volume 0.2&gt;&gt;
+
+@@.typed-speed800ms; 
 Your mission is to disarm the Missle set to your loacation that has just been activated when you accepted the mission. 
 
 We fear your loyalty has been compromised
@@ -458,11 +463,11 @@ and therefore, OURS.
 Good luck and God &#x27;s speed Agent...
 @@
 
-&lt;&lt;audio &quot;mission&quot; play loop volume 0.2&gt;&gt;
-[[what the hell?-&gt;Disarm]]</tw-passagedata><tw-passagedata pid="12" name="Disarm" tags="single-background" position="419,789">/*→ Create an element that has a selector*/
-How do you stop a missle from coming and you don&#x27;t know that you are? 
-&lt;&lt;audio &quot;JamesB&quot; stop&gt;&gt;
+[[what the hell?-&gt;Disarm]]</tw-passagedata><tw-passagedata pid="12" name="Disarm" tags="single-background" position="419,789">&lt;&lt;audio &quot;mission&quot; stop&gt;&gt;
 &lt;&lt;audio &quot;count&quot; play loop volume .4&gt;&gt;
+/*→ Create an element that has a selector*/
+How do you stop a missle from coming and you don&#x27;t know that you are? 
+
 &lt;a id=&quot;Figure-it-out&quot;&gt;Figure it out&lt;/a&gt;
 
 /*→ Link the element to the dialog, with a CSS class added to the dialog box*/
@@ -513,7 +518,7 @@ better hurry up before you&#x27;re the next thing &#x27;&#x27;smoking&#x27;&#x27
 &lt;&lt;clickdialog &quot;#Hurry&quot; &quot;Riddle&quot; &quot;red-popup&quot;&gt;&gt;\
     Another riddle?? 
 	
-	!Feed me and I live, yet give me a drink and I die...
+	Feed me and I live, yet give me a drink and I die...
 	
 	&lt;&lt;whenclosed&gt;&gt;
 		&lt;&lt;goto &quot;Cuba&quot; &gt;&gt;
@@ -530,6 +535,7 @@ Missle override key...
 &lt;&lt;next 2.5s&gt;&gt;
     &lt;&lt;goto &quot;boom&quot;&gt;&gt;
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="final" tags="" position="76,709">&lt;&lt;if $missles == &quot;fire&quot;&gt;&gt;
+&lt;&lt;audio &quot;count&quot; stop&gt;&gt;
 
 	@@.typed-800ms;
 	Congratulations...
@@ -556,11 +562,13 @@ Time remaining: &lt;span id=&quot;countdown&quot;&gt;$seconds&lt;/span&gt; secon
 
 &lt;&lt;cacheaudio &quot;James&quot; &quot;https://lajones911.github.io/LATwines/Sounds/JamesB.mp3&quot;&gt;&gt;
 
-&lt;&lt;cacheaudio &quot;Mission&quot; &quot;https://lajones911.github.io/LATwines/Sounds/Mission.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;mission&quot; &quot;https://lajones911.github.io/LATwines/Sounds/Mission.mp3&quot;&gt;&gt;
 
 &lt;&lt;cacheaudio &quot;Tick&quot; &quot;https://lajones911.github.io/LATwines/Sounds/Tick.wav&quot;&gt;&gt;
 
-&lt;&lt;cacheaudio &quot;Count&quot; &quot;https://lajones911.github.io/LATwines/Sounds/countdown.mp3&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="Room" tags="single-background" position="81,547">&lt;&lt;set $seconds = 10&gt;&gt;\
+&lt;&lt;cacheaudio &quot;count&quot; &quot;https://lajones911.github.io/LATwines/Sounds/countdown.mp3&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="Room" tags="single-background" position="81,547">&lt;&lt;audio &quot;count&quot; play volume 0.3&gt;&gt;
+
+&lt;&lt;set $seconds = 10&gt;&gt;\
 Don&#x27;t panic... 
 there has to be a way out of here. There&#x27;s a window..but you look pretty high up... 
 ​
